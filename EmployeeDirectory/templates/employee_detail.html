@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="card mx-auto mt-5" style="width: 18rem;">
+    <img src="{{employee.photo.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text m-0"> {{employee.first_name}} {{employee.last_name}}</p>
+      <p class="card-text m-0"> {{employee.designation}} </p>
+      <p class="card-text m-0"> {{employee.email_address}} </p>
+      <p class="card-text m-0"> {{employee.phone_number}} </p>
+    </div>
+    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+  </div>
+    
+{% endblock content %}
