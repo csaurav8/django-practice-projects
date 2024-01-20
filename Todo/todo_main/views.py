@@ -1,4 +1,11 @@
 from django.shortcuts import render
+from todo.models import Task
 
 def home(request):
-    return render(request, 'home.html')
+    undone_tasks = Task.objects.filter(is_completed = False)
+    done_tasks = Task.objects.filter(is_completed = True)
+    context = {
+        "undone": undone_tasks,
+        "done": done_tasks,
+    }
+    return render(request, 'home.html', context)
